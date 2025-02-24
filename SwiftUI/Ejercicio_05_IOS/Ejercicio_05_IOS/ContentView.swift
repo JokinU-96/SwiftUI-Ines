@@ -6,16 +6,27 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
+    @State private var newtaskTitle = ""
+    @ObservedObject var viewModel = TaskViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("Nueva Tarea", text : $newtaskTitle)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            Button("Agregar"){
+                viewModel.addTask(title: newtaskTitle)
+                newtaskTitle = ""
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(Color.white)
+            .cornerRadius(10)
         }
-        .padding()
+        
+        List(viewModel.tasks){
+            task in Text(task.title)
+        }
     }
 }
 
