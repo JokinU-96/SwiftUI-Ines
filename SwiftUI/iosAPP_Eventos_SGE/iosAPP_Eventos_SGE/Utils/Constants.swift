@@ -6,5 +6,5 @@
 //
 import Foundation
 struct API{
-    static let baseURL = "https://172.20.228.201/api"
+    static let baseURL = "http://172.20.228.201/api"
 }

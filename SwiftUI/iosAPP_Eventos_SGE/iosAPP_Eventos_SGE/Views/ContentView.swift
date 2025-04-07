@@ -9,10 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var eventVM = EventViewModel()
-
     @StateObject private var authVM = AuthViewModel()
-
-    //@StateObject private var authVM = AuthViewModel()
 
     var body: some View {
         VStack {
@@ -24,7 +21,7 @@ struct ContentView: View {
                 .cornerRadius(10)
             NavigationStack {
                 List(eventVM.events) { event in
-                    NavigationLink(destination: EventDetailView(event: event)) {
+                    NavigationLink(destination: EventDetailView(event: event, authVM: authVM, eventVM: eventVM)) {
                         HStack {
                             Image(systemName: "calendar")
                                 .resizable()

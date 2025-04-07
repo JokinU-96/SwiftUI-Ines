@@ -7,9 +7,11 @@
 import SwiftUI
 
 struct UserView: View {
+    
     @ObservedObject var authVM: AuthViewModel
     @State private var email: String = ""
     @State private var password: String = ""
+    
     var body: some View {
         VStack {
             if let user = authVM.user {

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct EventDetailView: View {
-    //@StateObject private var authVM: AuthViewModel = AuthViewModel()
+    
     var event: Event
-    //@StateObject private var eventVM: EventViewModel = EventViewModel()/@StateObject private var registrationVM = RegistrationViewModel()
+    @StateObject var authVM: AuthViewModel = AuthViewModel()
+    @StateObject var eventVM: EventViewModel = EventViewModel()
+    
     var body: some View {
-        //GeometryReader { geometry in
-        // if (geometry.size.height > geometry.size.width){ //Portrait
         ScrollView {
             VStack(alignment: .center, spacing: 20) {
                 Spacer()
@@ -43,16 +43,17 @@ struct EventDetailView: View {
                 .background(Color.white)
                 .cornerRadius(12)
                 .shadow(radius: 3)
-                //if let user = authVM.user {
-                //Button("Inscribirse") {
-                //eventVM.registerUserToEvent(eventId: event.id, userId: user.id)
-                //print("Inscrito en el evento")
-                //}
-                //.padding()
-                //.background(Color("PrimaryColor"))
-                //.foregroundColor(.white)
-                //.cornerRadius(10)
-                //}
+                
+                if let user = authVM.user {
+                    Button("Inscribirse") {
+                        eventVM.registerUserToEvent(eventId: event.id, userId: user.id)
+                        print("Inscrito en el evento")
+                    }
+                    .padding()
+                    .background(Color("PrimaryColor"))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                }
                 Spacer()
             }
             .padding()
@@ -62,7 +63,8 @@ struct EventDetailView: View {
 }
 #Preview {
     EventDetailView(
-        event: Event(
-            id: 2, event_name: "Ponencia",
-            event_detail: "StackOverflow manager", event_type_id: 3))
+        event: Event(id: 2, event_name: "Ponencia",event_detail: "StackOverflow manager", event_type_id: 3),
+        authVM: AuthViewModel(),
+        eventVM: EventViewModel()
+    )
 }
