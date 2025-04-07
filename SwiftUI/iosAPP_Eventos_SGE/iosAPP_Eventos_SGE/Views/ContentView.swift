@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var eventVM = EventViewModel()
+<<<<<<< HEAD
     @StateObject private var authVM = AuthViewModel()
+=======
+    //@StateObject private var authVM = AuthViewModel()
+>>>>>>> origin/main
     var body: some View {
         VStack {
             Text("Bienvenido a Atrápalo")
@@ -51,6 +55,7 @@ struct ContentView: View {
                 //.navigationTitle("Atrápalo")
                 .onAppear { eventVM.fetchEvents() }
                 Spacer()
+<<<<<<< HEAD
                 HStack{
                     Spacer()
                     
@@ -79,6 +84,8 @@ struct ContentView: View {
                     Spacer()
                 }
                 .background(Color("PrimaryColor"))
+=======
+>>>>>>> origin/main
             }
         }.background(Color("PrimaryColor"))
     }

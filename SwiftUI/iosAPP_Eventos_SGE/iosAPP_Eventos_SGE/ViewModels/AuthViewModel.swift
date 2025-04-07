@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+<<<<<<< HEAD
 class AuthViewModel: ObservableObject {
     @Published var user: User? = nil
     @Published var token: String? = nil
     func login(email: String, password: String) {
         guard let url = URL(string: "\(API.baseURL)/auth/login") else {
+=======
+/*class AuthViewModel: ObservableObject {
+    @Published var user: User? = nil
+    @Published var token: String? = nil
+    func login(email: String, password: String) {
+        guard let url = URL(string: "http://localhost/api/auth/login") else {
+>>>>>>> origin/main
             return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -32,4 +40,8 @@ class AuthViewModel: ObservableObject {
         self.user = nil
         self.token = nil
     }
+<<<<<<< HEAD
 }
+=======
+}*/
+>>>>>>> origin/main
