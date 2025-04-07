@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C2D4B0522DA435DE00DC5AED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C2D4B0512DA435D500DC5AED /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C2AB28412D889BB4003DC4D8 /* iosAPP_Eventos_SGE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosAPP_Eventos_SGE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2D4B0512DA435D500DC5AED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		C2AB28382D889BB4003DC4D8 = {
 			isa = PBXGroup;
 			children = (
+				C2D4B0512DA435D500DC5AED /* .gitignore */,
 				C2AB28432D889BB4003DC4D8 /* iosAPP_Eventos_SGE */,
 				C2AB28422D889BB4003DC4D8 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D4B0522DA435DE00DC5AED /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
