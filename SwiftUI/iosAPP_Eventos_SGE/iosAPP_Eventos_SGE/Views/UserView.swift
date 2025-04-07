@@ -6,11 +6,7 @@
 //
 import SwiftUI
 
-<<<<<<< HEAD
 struct UserView: View {
-=======
-/*struct UserView: View {
->>>>>>> origin/main
     @ObservedObject var authVM: AuthViewModel
     @State private var email: String = ""
     @State private var password: String = ""
@@ -46,8 +42,4 @@ struct UserView: View {
 }
 #Preview {
     UserView(authVM: AuthViewModel())
-<<<<<<< HEAD
 }
-=======
-}*/
->>>>>>> origin/main

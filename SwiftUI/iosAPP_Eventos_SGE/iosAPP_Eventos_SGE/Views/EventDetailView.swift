@@ -63,11 +63,6 @@ struct EventDetailView: View {
 #Preview {
     EventDetailView(
         event: Event(
-<<<<<<< HEAD
             id: 2, event_name: "Ponencia",
             event_detail: "StackOverflow manager", event_type_id: 3))
-=======
-            id: 2, event_name: "Nombre del evento",
-            event_detail: "Detalle del evento", event_type_id: 1))
->>>>>>> origin/main
 }

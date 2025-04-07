@@ -6,19 +6,11 @@
 //
 
 import SwiftUI
-<<<<<<< HEAD
 class AuthViewModel: ObservableObject {
     @Published var user: User? = nil
     @Published var token: String? = nil
     func login(email: String, password: String) {
-        guard let url = URL(string: "\(API.baseURL)/auth/login") else {
-=======
-/*class AuthViewModel: ObservableObject {
-    @Published var user: User? = nil
-    @Published var token: String? = nil
-    func login(email: String, password: String) {
         guard let url = URL(string: "http://localhost/api/auth/login") else {
->>>>>>> origin/main
             return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -32,6 +24,7 @@ class AuthViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.user = decodedResponse.user
                     self.token = decodedResponse.access_token
+                    self.saveUserData()
                 }
             }
         }.resume()
@@ -39,9 +32,24 @@ class AuthViewModel: ObservableObject {
     func logout() {
         self.user = nil
         self.token = nil
+        UserDefaults.standard.removeObject(forKey: "user")
+        UserDefaults.standard.removeObject(forKey: "token")
     }
-<<<<<<< HEAD
+    
+    private func saveUserData(){
+        if let user = user, let encodeUser = try? JSONEncoder().encode(user){
+            UserDefaults.standard.set(encodeUser, forKey: "user")
+        }
+        if let token = token {
+            UserDefaults.standard.set(token, forKey: "token")
+        }
+    }
+    private func loadUserData(){
+        if let savedUser = UserDefaults.standard.data(forKey: "user"), let decodedUser = try? JSONDecoder().decode(User.self, from: savedUser){
+            self.user = decodedUser
+        }
+        if let savedToken = UserDefaults.standard.string(forKey: "token"){
+            self.token = savedToken
+        }
+    }
 }
-=======
-}*/
->>>>>>> origin/main
